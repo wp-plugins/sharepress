@@ -4,7 +4,7 @@ Donate link: http://sharepress.fatpandadev.com
 Tags: facebook, social, sharing, automagical
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Automatically send your Posts to your personal Facebook Wall. 
 
@@ -27,6 +27,9 @@ None yet!
 None yet!
 
 == Changelog ==
+
+= 1.0.1 =
+* Added links for learning more about Sharepress Pro
 
 = 1.0 =
 * The first release!

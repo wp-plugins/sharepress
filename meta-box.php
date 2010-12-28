@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 if (!defined('ABSPATH')) exit; /* silence is golden... */ ?>
 
 <div style="padding:0px 7px; background-color: lightYellow; border: 1px solid #e6db55; border-radius: 3px;">
-  <p><b>Go pro!</b> This plugin can do more: a lot more. <a href="#">Learn more</a> or <a href="#">Buy now</a>.</p>
+  <p><b>Go pro!</b> This plugin can do more: a lot more. <a href="http://sharepress.fatpandadev.com">Learn more</a>.</p>
 </div>
 
 
