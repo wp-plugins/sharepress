@@ -630,18 +630,20 @@ class Sharepress {
   }
   
   function admin_notices() {
-    if (( !self::api_key() || !self::app_secret() || !self::session() ) && @$_REQUEST['page'] != 'sharepress') {
-      ?>
-        <div class="error">
-          <p>You haven't finished setting up <a href="<?php get_option('siteurl') ?>/wp-admin/options-general.php?page=sharepress">Sharepress</a>.</p>
-        </div>
-      <?php
-    } else if (@$_REQUEST['page'] == 'sharepress' && !self::$pro) {
-      ?>
-        <div class="updated">
-          <p><b>Go pro!</b> This plugin can do more: a lot more. <a href="http://sharepress.fatpandadev.com">Learn more</a>.</p>
-        </div>
-      <?php
+    if (current_user_can('administrator')) {
+      if (( !self::api_key() || !self::app_secret() || !self::session() ) && @$_REQUEST['page'] != 'sharepress') {
+        ?>
+          <div class="error">
+            <p>You haven't finished setting up <a href="<?php get_option('siteurl') ?>/wp-admin/options-general.php?page=sharepress">Sharepress</a>.</p>
+          </div>
+        <?php
+      } else if (@$_REQUEST['page'] == 'sharepress' && !self::$pro) {
+        ?>
+          <div class="updated">
+            <p><b>Go pro!</b> This plugin can do more: a lot more. <a href="http://sharepress.fatpandadev.com">Learn more</a>.</p>
+          </div>
+        <?php
+      }
     }
   }
   
