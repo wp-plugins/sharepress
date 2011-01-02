@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 if (!defined('ABSPATH')) exit; /* silence is golden */ ?>
 
 <div class="wrap">
-  <div id="icon-general" class="icon32" style="background:url('<?php echo plugins_url('sharepress-lite/icon32.png') ?>') no-repeat;"><br /></div>
+  <div id="icon-general" class="icon32" style="background:url('<?php echo plugins_url('sharepress/icon32.png') ?>') no-repeat;"><br /></div>
   <?php if (@$_REQUEST['step'] != 'config') { ?>
     <h2 style="border-bottom: 1px solid #ccc; height:43px;">
       <span style="margin-right:40px; position:relative; top:-5px;">Sharepress Setup</span>
@@ -48,13 +48,13 @@ if (!defined('ABSPATH')) exit; /* silence is golden */ ?>
         <p>Before you continue, you'll need to create your own Facebook Application. <a href="http://www.facebook.com/developers/createapp.php" target="_blank">Do this now &raquo;</a></p>
         
         <p>If you've never created a Facebook application before, you'll be asked to authorize the <b>Developer</b> application. This is very safe.</p>
-        <a href="<?php echo plugins_url('sharepress-lite/create_app_step1.jpg'); ?>"><img src="<?php echo plugins_url('sharepress-lite/create_app_step1_thumb.jpg') ?>" style="border: 1px solid #ccc;" /></a>
+        <a href="<?php echo plugins_url('sharepress/create_app_step1.jpg'); ?>"><img src="<?php echo plugins_url('sharepress/create_app_step1_thumb.jpg') ?>" style="border: 1px solid #ccc;" /></a>
         
         <p>To match your blog, you should consider naming your application <b><?php bloginfo('name') ?></b>.</p>
-        <a href="<?php echo plugins_url('sharepress-lite/create_app_step2.jpg'); ?>"><img src="<?php echo plugins_url('sharepress-lite/create_app_step2_thumb.jpg') ?>" style="border: 1px solid #ccc;" /></a>
+        <a href="<?php echo plugins_url('sharepress/create_app_step2.jpg'); ?>"><img src="<?php echo plugins_url('sharepress/create_app_step2_thumb.jpg') ?>" style="border: 1px solid #ccc;" /></a>
         
         <p>Your Site URL is <b><?php echo get_option('siteurl') ?></b>, and your domain is <b><?php $url = parse_url(get_option('siteurl')); echo $url['host'] ?></b>.</p>
-        <a href="<?php echo plugins_url('sharepress-lite/create_app_step3.jpg'); ?>"><img src="<?php echo plugins_url('sharepress-lite/create_app_step3_thumb.jpg') ?>" style="border: 1px solid #ccc;" /></a>
+        <a href="<?php echo plugins_url('sharepress/create_app_step3.jpg'); ?>"><img src="<?php echo plugins_url('sharepress/create_app_step3_thumb.jpg') ?>" style="border: 1px solid #ccc;" /></a>
       </div>
       
       <br />
@@ -177,8 +177,8 @@ if (!defined('ABSPATH')) exit; /* silence is golden */ ?>
         <tr>
           <th></th>
           <td id="fb_connect">
-            <p class="connect"><a href="#" onclick="fb_connect();" style="display:block; padding-left:22px; background:url('<?php echo plugins_url('sharepress-lite/icon16.png') ?>') no-repeat;">Connect to Facebook</a></p>
-            <p class="connecting" style="display:none;"><img src="<?php echo plugins_url('sharepress-lite/wait.gif') ?>" /> Connecting...</p>
+            <p class="connect"><a href="#" onclick="fb_connect();" style="display:block; padding-left:22px; background:url('<?php echo plugins_url('sharepress/icon16.png') ?>') no-repeat;">Connect to Facebook</a></p>
+            <p class="connecting" style="display:none;"><img src="<?php echo plugins_url('sharepress/wait.gif') ?>" /> Connecting...</p>
             <p class="connected" style="display:none;">Connected!</p>
           </td>
         </tr>
