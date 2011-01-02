@@ -4,11 +4,13 @@ Donate link: http://sharepress.fatpandadev.com
 Tags: facebook, social, sharing, automated, tribe, comment, like, audience
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 
 Sharepress is a WordPress plugin that publishes your content to your Facebook Wall. 
 
 == Description ==
+
+Sharepress is a WordPress plugin that publishes your content to your Facebook Wall. 
 
 Reaching an audience of more than 500,000,000 people, Facebook has become the next
 great stage from which to speak to the world. Rest assured: your customers and your
@@ -57,6 +59,9 @@ None yet!
 None yet!
 
 == Changelog ==
+
+= 1.0.4 =
+* Discovered that the only message that displays within the WordPress plugin library search is under the Description header.
 
 = 1.0.3 =
 * Forgot to up the plugin version. Hope I don't make that mistake twice.
