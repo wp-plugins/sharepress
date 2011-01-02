@@ -4,7 +4,7 @@ Plugin Name: Sharepress
 Description: Automatically send your Posts to your personal Facebook Wall. 
 Author: Aaron Collegeman
 Author URI: http://github.com/collegeman
-Version: 1.0.5
+Version: 1.0.6
 */
 
 /*
@@ -26,7 +26,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-define('SHAREPRESS_LITE_VERSION', '1.0.5');
+define('SHAREPRESS_LITE_VERSION', '1.0.6');
 
 // we depend on this...
 require('facebook-sdk-2.1.2.php');
@@ -230,7 +230,7 @@ class Sharepress {
   static $pro;
   static $thread_id;
   private function __construct() {
-    add_action('activate_sharepress-lite/sharepress-lite.php', array($this, 'activate'));
+    add_action('activate_sharepress/sharepress-lite.php', array($this, 'activate'));
     
     // if the pro version is loaded, initialize it
     if (class_exists('SharepressPro')) {
@@ -247,7 +247,7 @@ class Sharepress {
       add_action('save_post', array($this, 'save_post'));
      
       add_filter('contextual_help', array($this, 'contextual_help'));
-      add_filter('plugin_action_links_sharepress-lite/sharepress-lite.php', array($this, 'plugin_action_links'), 10, 4);
+      add_filter('plugin_action_links_sharepress/sharepress-lite.php', array($this, 'plugin_action_links'), 10, 4);
     }
     
     add_action('transition_post_status', array($this, 'transition_post_status'), 10, 3);
@@ -625,8 +625,8 @@ class Sharepress {
     register_setting('fb-settings', self::OPTION_NOTIFICATIONS);
     register_setting('fb-settings', self::OPTION_SETTINGS);
 
-    wp_enqueue_style('fancybox', plugins_url('sharepress-lite/fancybox/jquery.fancybox-1.3.4.css'));
-    wp_enqueue_script('fancybox', plugins_url('sharepress-lite/fancybox/jquery.fancybox-1.3.4.pack.js', array('jquery')));
+    wp_enqueue_style('fancybox', plugins_url('sharepress/fancybox/jquery.fancybox-1.3.4.css'));
+    wp_enqueue_script('fancybox', plugins_url('sharepress/fancybox/jquery.fancybox-1.3.4.pack.js', array('jquery')));
   }
   
   function admin_notices() {
