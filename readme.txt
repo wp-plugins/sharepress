@@ -4,7 +4,7 @@ Donate link: http://sharepress.fatpandadev.com
 Tags: facebook, social, sharing, automated, tribe, comment, like, audience
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 
 Sharepress is a WordPress plugin that publishes your content to your Facebook Wall. 
 
@@ -40,9 +40,9 @@ and we'll let you know when it's ready.
 1. Get the plugin-in.
 
 1. Extract the plugin into your `wp-content/plugins` folder. This should create within
-the plugins folder another folder named `sharepress-lite`. If it does not create this folder,
+the plugins folder another folder named `sharepress`. If it does not create this folder,
 you must create the folder yourself, and put the plugin files in it. Sharepress will not
-work unless it resides in a folder named `sharepress-lite`.
+work unless it resides in a folder named `sharepress`.
 
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 
@@ -59,6 +59,9 @@ None yet!
 None yet!
 
 == Changelog ==
+
+= 1.0.5 =
+* Major typo in the readme. Sheesh.
 
 = 1.0.4 =
 * Discovered that the only message that displays within the WordPress plugin library search is under the Description header.
