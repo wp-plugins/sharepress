@@ -12,7 +12,7 @@ if (!function_exists('json_decode')) {
  *
  * @author Naitik Shah <naitik@facebook.com>
  */
-class FacebookApiException extends Exception
+class spFacebookApiException extends Exception
 {
   /**
    * The result from the API server that represents the exception information.
@@ -74,7 +74,7 @@ class FacebookApiException extends Exception
  *
  * @author Naitik Shah <naitik@facebook.com>
  */
-class Facebook
+class spFacebook
 {
   /**
    * Version.
@@ -477,7 +477,7 @@ class Facebook
    *
    * @param Array $params method call object
    * @return the decoded response object
-   * @throws FacebookApiException
+   * @throws spFacebookApiException
    */
   protected function _restserver($params) {
     // generic application level parameters
@@ -491,7 +491,7 @@ class Facebook
 
     // results are returned, errors are thrown
     if (is_array($result) && isset($result['error_code'])) {
-      throw new FacebookApiException($result);
+      throw new spFacebookApiException($result);
     }
     return $result;
   }
@@ -503,7 +503,7 @@ class Facebook
    * @param String $method the http method (default 'GET')
    * @param Array $params the query/post data
    * @return the decoded response object
-   * @throws FacebookApiException
+   * @throws spFacebookApiException
    */
   protected function _graph($path, $method='GET', $params=array()) {
     if (is_array($method) && empty($params)) {
@@ -519,7 +519,7 @@ class Facebook
 
     // results are returned, errors are thrown
     if (is_array($result) && isset($result['error'])) {
-      $e = new FacebookApiException($result);
+      $e = new spFacebookApiException($result);
       if ($e->getType() === 'OAuthException') {
         $this->setSession(null);
       }
@@ -534,7 +534,7 @@ class Facebook
    * @param String $path the path (required)
    * @param Array $params the query/post data
    * @return the decoded response object
-   * @throws FacebookApiException
+   * @throws spFacebookApiException
    */
   protected function _oauthRequest($url, $params) {
     if (!isset($params['access_token'])) {
@@ -586,7 +586,7 @@ class Facebook
     curl_setopt_array($ch, $opts);
     $result = curl_exec($ch);
     if ($result === false) {
-      $e = new FacebookApiException(array(
+      $e = new spFacebookApiException(array(
         'error_code' => curl_errno($ch),
         'error'      => array(
           'message' => curl_error($ch),

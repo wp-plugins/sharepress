@@ -4,12 +4,12 @@ Plugin Name: Sharepress
 Description: Automatically send your Posts to your personal Facebook Wall. 
 Author: Aaron Collegeman
 Author URI: http://github.com/collegeman
-Version: 1.0.6
+Version: 1.0.7
 */
 
 /*
 sharepress
-Copyright (C)2010  Fat Panda LLC
+Copyright (C)2010-2011  Fat Panda LLC
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -31,7 +31,7 @@ define('SHAREPRESS_LITE_VERSION', '1.0.6');
 // we depend on this...
 require('facebook-sdk-2.1.2.php');
 // we don't care about certificate verification
-Facebook::$CURL_OPTS = Facebook::$CURL_OPTS + array(
+spFacebook::$CURL_OPTS = spFacebook::$CURL_OPTS + array(
   CURLOPT_SSL_VERIFYPEER => false
 );
 // debugging
@@ -119,7 +119,7 @@ class Sharepress {
   static function facebook() {
     if (!self::$facebook) {
       if (($api_key = self::api_key()) && ($app_secret = self::app_secret()) && ($session = self::session())) {
-        self::$facebook = new Facebook(array(
+        self::$facebook = new spFacebook(array(
           'appId' => $api_key,
           'secret' => $app_secret
         ));

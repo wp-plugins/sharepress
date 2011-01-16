@@ -1,7 +1,7 @@
 <?php 
 /*
 sharepress
-Copyright (C)2010  Fat Panda LLC
+Copyright (C)2010-2011  Fat Panda LLC
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License

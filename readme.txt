@@ -3,8 +3,8 @@ Contributors: aaroncollegeman
 Donate link: http://sharepress.fatpandadev.com
 Tags: facebook, social, sharing, automated, tribe, comment, like, audience
 Requires at least: 3.0
-Tested up to: 3.0
-Stable tag: 1.0.6
+Tested up to: 3.0.4
+Stable tag: 1.0.7
 
 Sharepress is a WordPress plugin that publishes your content to your Facebook Wall. 
 
@@ -37,16 +37,17 @@ and we'll let you know when it's ready.
 
 == Installation ==
 
-1. Get the plugin-in.
+1. Get the plugin-in. Download it manually or install through the 'Plugins' menu in WordPress.
 
-1. Extract the plugin into your `wp-content/plugins` folder. This should create within
-the plugins folder another folder named `sharepress`. If it does not create this folder,
-you must create the folder yourself, and put the plugin files in it. Sharepress will not
-work unless it resides in a folder named `sharepress`.
+1. If you downloaded the plugin as a zip file, extract the plugin into your `wp-content/plugins` 
+folder. This should create within the plugins folder another folder named `sharepress`. If it 
+does not create this folder, you must create the folder yourself, and put the plugin files in it. 
+Sharepress will not work unless it resides in a folder named `sharepress`.
 
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 
-1. Configure Sharepress. Instructions in the application will help you to create your own Facebook Application (required).
+1. Configure through the 'Sharepress' item on the 'Settings' menu. Instructions in the application
+will help you to create your own Facebook Application (required).
 
 Post questions about installation and usage [in the forum](http://wordpress.org/tags/sharepress?forum_id=10#postform).
 
@@ -59,6 +60,9 @@ None yet!
 None yet!
 
 == Changelog ==
+
+= 1.0.7 =
+* Added "sp" prefix to the Facebook classes, now "spFacebook" and "spFacebookApiException" - was creating namespace conflicts with other Facebook plugins (thanks [Ben Gillbanks](http://twitter.com/binarymoon) of [WPVOTE](http://www.wpvote.com))
 
 = 1.0.6 =
 * Addressing some inconsistencies in the way the plugin is named, and the way that name is used internally.
@@ -83,6 +87,9 @@ None yet!
 * The first release!
 
 == Upgrade Notice ==
+
+= 1.0.6 =
+Fixes a bug that results in breaking core JavaScript in the WordPress admin
 
 = 1.0 =
 Because it's the first version!
