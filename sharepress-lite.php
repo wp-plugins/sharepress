@@ -4,7 +4,7 @@ Plugin Name: Sharepress
 Description: Automatically send your Posts to your personal Facebook Wall. 
 Author: Aaron Collegeman
 Author URI: http://github.com/collegeman
-Version: 1.0.7
+Version: 1.0.8
 */
 
 /*
@@ -26,7 +26,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-define('SHAREPRESS_LITE_VERSION', '1.0.6');
+define('SHAREPRESS_LITE_VERSION', '1.0.8');
 
 // we depend on this...
 require('facebook-sdk-2.1.2.php');
@@ -299,8 +299,7 @@ class Sharepress {
         'description' => $this->get_excerpt($post),
         'excerpt_is_description' => true,
         'targets' => array_keys(self::targets()),
-        // enabled = off when post existed before plugin was activated
-        'enabled' => ($post->post_date_gmt && $post->post_date_gmt != '0000-00-00 00:00:00' && strtotime($post->post_date_gmt) < strtotime($activated_on)) ? 'off' : Sharepress::setting('default_behavior')
+        'enabled' => Sharepress::setting('default_behavior')
       );
     }
     
@@ -319,16 +318,11 @@ class Sharepress {
       </style>
     <?php
     
-    // if already published or post_date is earlier than plugin activation
-    if (($post_date_gmt = strtotime($post->post_date_gmt)) && $post_date_gmt < ($activated = strtotime(get_option(self::OPTION_ACTIVATED)))) {
-      require('too-old-msg.php');
+    if ($posted = get_post_meta($post->ID, self::META_POSTED, true)) {
+      require('published-msg.php');
+      echo $meta_box;
     } else {
-      if ($posted = get_post_meta($post->ID, self::META_POSTED, true)) {
-        require('published-msg.php');
-        echo $meta_box;
-      } else {
-        require('behavior-picker.php');
-      }
+      require('behavior-picker.php');
     }
   }
   
