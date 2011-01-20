@@ -4,7 +4,7 @@ Plugin Name: Sharepress
 Description: Automatically send your Posts to your personal Facebook Wall. 
 Author: Aaron Collegeman
 Author URI: http://github.com/collegeman
-Version: 1.0.8
+Version: 1.0.9
 */
 
 /*
@@ -26,7 +26,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-define('SHAREPRESS_LITE_VERSION', '1.0.8');
+define('SHAREPRESS_LITE_VERSION', '1.0.9');
 
 // we depend on this...
 require('facebook-sdk-2.1.2.php');
@@ -356,14 +356,20 @@ class Sharepress {
         // clear the published date in meta
         delete_post_meta($post->ID, self::META_POSTED);
         // filter the meta
-        $meta = apply_filters('filter_'.self::META, $_POST[self::META], $post);  
+        
+        if (!$_POST[self::META]) {
+          $meta = get_post_meta($post->ID, self::META, true);
+        } else {
+          $meta = apply_filters('filter_'.self::META, $_POST[self::META], $post);  
+        }
+        
         // save the meta data
         update_post_meta($post->ID, self::META, $meta);
-        // if this is a publish action, do it
+        
         if ($post->post_status == 'publish') {
           $this->post_on_facebook($post);
         }
-      
+        
         return true;
       } else {
         return false;
