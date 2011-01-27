@@ -4,7 +4,7 @@ Donate link: http://sharepress.fatpandadev.com
 Tags: facebook, social, sharing, automated, tribe, comment, like, audience
 Requires at least: 3.0
 Tested up to: 3.0.4
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 
 Sharepress is a WordPress plugin that publishes your content to your Facebook Wall. 
 
@@ -60,6 +60,9 @@ None yet!
 None yet!
 
 == Changelog ==
+
+= 1.0.10 =
+* [Jen Russo](http://www.mauitime.com) reported that posts created via e-mailing to Posterous weren't triggering Sharepress. There was a bug that prevented Sharepress from firing in all cases other than the ones wherein the user was manually accessing the admin. This is now fixed.
 
 = 1.0.9 =
 * [Corey Brown](http://www.twitter.com/coreyweb) reported a bug in the "Publish to Facebook again" feature: not only was it not publishing again, but it was deleting the original meta data. This is now fixed.
