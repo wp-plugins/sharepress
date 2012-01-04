@@ -6,7 +6,7 @@ Requires at least: 2.9
 Tested up to: 3.3
 Stable tag: 2.0.24
 
-Share the content you write in WordPress with your Facebook Fans and Twitter Followers, simply and reliably.
+Publish your posts to Facebook and Twitter, simply and reliably. Maximize value by reposting old content.
 
 == Description ==
 
