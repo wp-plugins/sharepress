@@ -12,6 +12,8 @@ Share the content you write in WordPress with your Facebook Fans and Twitter Fol
 
 SharePress is a WordPress plugin that helps you communicate with your [tribes](http://sethgodin.typepad.com/seths_blog/2008/01/tribal-manageme.html) on Facebook and Twitter by automatically publishing your WordPress posts the moment they become live on your site.
 
+[youtube http://youtube.com/watch?v=X6dRD0pd1nM]
+
 With SharePress you'll be able to
 
 * Publish your WordPress posts to any/all of the Facebook pages you manage
