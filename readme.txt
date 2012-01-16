@@ -14,6 +14,8 @@ SharePress is a WordPress plugin that helps you communicate with your [tribes](h
 
 [youtube http://youtube.com/watch?v=X6dRD0pd1nM]
 
+(Awesome promo reel by [Keyframe Films](http://keyframefilms.com).)
+
 With SharePress you'll be able to
 
 * Publish your WordPress posts to any/all of the Facebook pages you manage
