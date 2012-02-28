@@ -5,7 +5,7 @@ Plugin URI: http://aaroncollegeman.com/sharepress
 Description: SharePress publishes your content to your personal Facebook Wall and the Walls of Pages you choose.
 Author: Fat Panda, LLC
 Author URI: http://fatpandadev.com
-Version: 2.1.16
+Version: 2.1.17
 License: GPL2
 */
 
@@ -690,10 +690,10 @@ class Sharepress {
     if (!$twitter_meta) {
       // defaults:
       $twitter_meta = array(
-        'enabled' => Sharepress::setting('twitter_behavior', 'on')
+        'enabled' => Sharepress::setting('twitter_behavior', 'on'),
+        'hash_tag' => self::setting('twitter_default_hashtag')
       );
     }
-
     $twitter_enabled = $twitter_meta['enabled'] == 'on';
 
     // stash $meta globally for access from Sharepress::sort_by_selected
@@ -1094,7 +1094,8 @@ class Sharepress {
         'login' => $login,
         'apikey' => $apikey,
         'longUrl' => $this->get_permalink($post->ID),
-        'format' => 'json'
+        'format' => 'json',
+        'sslverify' => false
       )), array('method' => 'GET'));
 
       // SharePress::log('Bit.ly result: '.print_r($response, true));
